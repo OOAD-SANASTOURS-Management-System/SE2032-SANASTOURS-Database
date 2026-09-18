@@ -1,0 +1,3 @@
+SELECT * FROM Driver;
+SELECT * FROM Vehicle;
+SELECT * FROM Trip;
