@@ -65,10 +65,10 @@ ON DELETE RESTRICT ON UPDATE CASCADE
 CREATE TABLE Payment (
 payment_id INT PRIMARY KEY,
 booking_id INT NOT NULL,
-amount DECIMAL (10, 2),
 payment_date DATE,
-reference_number VARCHAR(50),
+amount DECIMAL (10, 2),
 payment_status VARCHAR(50),
+reference_number VARCHAR(50),
 
 CONSTRAINT fk_payment_booking
 FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
