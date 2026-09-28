@@ -4,12 +4,17 @@ USE sanastours_db;
 
 CREATE TABLE Driver (
 driver_id INT PRIMARY KEY,
+user_id INT NOT NULL UNIQUE,
 driver_name VARCHAR(100) NOT NULL,
 nic VARCHAR(20) NOT NULL UNIQUE,
 phone VARCHAR(20) NOT NULL,
 license_number VARCHAR(50)  NOT NULL UNIQUE,
 license_expiry_date DATE NOT NULL,
-driver_status VARCHAR(20)  NOT NULL DEFAULT 'Active'
+driver_status VARCHAR(20)  NOT NULL DEFAULT 'Active',
+
+CONSTRAINT fk_driver_user
+FOREIGN KEY (user_id) REFERENCES User(user_id)
+ON DELETE CASCADE ON UPDATE CASCADE
 );
  
 CREATE TABLE Vehicle (
