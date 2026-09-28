@@ -20,7 +20,8 @@ CREATE TABLE Customer (
     address VARCHAR(150),
     country VARCHAR(50),
     CONSTRAINT PRIMARY KEY (customer_id),
-    FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
+	CONSTRAINT fk_customer_user FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
+
 
 
