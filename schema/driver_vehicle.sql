@@ -5,13 +5,18 @@ USE sanastours_db;
 CREATE TABLE Driver (
 driver_id INT PRIMARY KEY,
 driver_name VARCHAR(100) NOT NULL,
+nic VARCHAR(20) NOT NULL UNIQUE,
+phone VARCHAR(20) NOT NULL,
 license_number VARCHAR(50)  NOT NULL UNIQUE,
+license_expiry_date DATE NOT NULL,
 driver_status VARCHAR(20)  NOT NULL DEFAULT 'Active'
 );
  
 CREATE TABLE Vehicle (
 vehicle_id INT PRIMARY KEY,
 registration_no VARCHAR(20) NOT NULL UNIQUE,
+brand VARCHAR(50) NOT NULL,
+model VARCHAR(50) NOT NULL,
 vehicle_type VARCHAR(50) NOT NULL,
 capacity INT NOT NULL,
 vehicle_status VARCHAR(20) NOT NULL DEFAULT 'Available'
@@ -40,3 +45,6 @@ CONSTRAINT fk_trip_driver
 FOREIGN KEY (driver_id) REFERENCES Driver(driver_id)
 ON DELETE RESTRICT ON UPDATE CASCADE
 );
+
+
+
