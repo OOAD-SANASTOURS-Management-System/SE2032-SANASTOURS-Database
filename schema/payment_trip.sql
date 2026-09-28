@@ -3,6 +3,7 @@ USE sanastours_db;
 
 CREATE TABLE Driver (
 driver_id INT PRIMARY KEY,
+user_id INT NOT NULL UNIQUE,
 driver_name VARCHAR(100) NOT NULL,
 nic VARCHAR(50)  NOT NULL UNIQUE,
 phone VARCHAR(50)  NOT NULL,
