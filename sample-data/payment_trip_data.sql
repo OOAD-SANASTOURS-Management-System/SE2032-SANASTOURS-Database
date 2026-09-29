@@ -12,3 +12,14 @@ INSERT INTO Payment (payment_id, booking_id, payment_date, amount, payment_statu
 (209, 109, '2026-09-20', 45000.00, 'Completed', 'REF-2026-009'),
 (210, 110, '2026-09-22', 20000.00, 'Pending',   'REF-2026-010');
 
+INSERT INTO Booking (booking_id, customer_id, package_id, booking_date, no_of_people, booking_status) VALUES
+(101, 1, 1, '2026-09-01', 2, 'Confirmed'),
+(102, 2, 2, '2026-09-03', 4, 'Confirmed'),
+(103, 3, 1, '2026-09-05', 1, 'Pending'),
+(104, 4, 3, '2026-09-08', 5, 'Confirmed'),
+(105, 5, 2, '2026-09-10', 3, 'Cancelled'),
+(106, 6, 4, '2026-09-12', 10, 'Confirmed'),
+(107, 7, 3, '2026-09-15', 6, 'Pending'),
+(108, 8, 5, '2026-09-18', 2, 'Confirmed'),
+(109, 9, 1, '2026-09-20', 20, 'Confirmed'),
+(110, 10, 2, '2026-09-22', 2, 'Pending');
