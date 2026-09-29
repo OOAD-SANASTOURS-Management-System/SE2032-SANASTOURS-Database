@@ -23,4 +23,15 @@ CREATE TABLE Customer (
     CONSTRAINT fk_customer_user FOREIGN KEY (user_id) REFERENCES User(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE Inquiry (
+    inquiry_id INT AUTO_INCREMENT PRIMARY KEY,
+    customer_id INT NOT NULL,
+    travel_dates VARCHAR(100),
+    number_of_travellers INT,
+    destinations_of_interest TEXT,
+    special_requirements TEXT,
+    inquiry_status VARCHAR(50) DEFAULT 'Pending',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_inquiry_customer FOREIGN KEY (customer_id) REFERENCES Customer(customer_id) ON DELETE CASCADE
+);
 
